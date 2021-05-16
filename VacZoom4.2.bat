@@ -14,10 +14,12 @@ pause
 
 Rem Needs to be updated
 :Update
-echo You are not up to date! File will update automatically, but you need to restart VacZoom
+echo You are not up to date! File will update automatically
 pause
 powershell wget https://vacwear.com/VacZoom/VacZoom%nversion%.bat -OutFile VacZoom%nversion%.bat
 del /F /Q VacZoom%version%.bat
+Rem call the new version, so you dont need to restart VacZoom
+call VacZoom%nversion%.bat
 goto :eof
 
 Rem Current version is up to date
